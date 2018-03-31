@@ -1,12 +1,12 @@
 ﻿Public Class Form1
     Dim no
-    Dim biaohao = 0
+    Dim biaohao = -1
     Private Sub Button_run_Click(sender As Object, e As EventArgs) Handles Button_run.Click
 
-        Label_NO.Text = no(biaohao)
-        If biaohao = 35 Then
-            MsgBox("题以出完")
+        If biaohao = 35 Or biaohao = -1 Then
+            MsgBox("无题，或题已出完，请出题！")
         Else
+            Label_NO.Text = no(biaohao)
             biaohao = biaohao + 1
         End If
 
@@ -52,14 +52,21 @@ Line1:
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         no = MakeRndSum(1, 35, 35)
+        biaohao = biaohao + 1
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        If MsgBox("重新开始", vbQuestion + vbYesNo) = vbYes Then
+        If MsgBox("出题将覆盖记录，确认重新出题？", vbQuestion + vbYesNo) = vbYes Then
             no = MakeRndSum(1, 35, 35)
             biaohao = 0
         Else
 
         End If
+
+    End Sub
+
+    Private Sub Form1_SizeChanged(sender As Object, e As EventArgs) Handles Me.SizeChanged
+        Panel1.Left = (Me.Width - Panel1.Width) \ 2
+        Panel1.Top = (Me.Height - Panel1.Height) \ 2
     End Sub
 End Class

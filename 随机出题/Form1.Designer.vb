@@ -22,22 +22,22 @@ Partial Class Form1
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label_NO = New System.Windows.Forms.Label()
-        Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.Button_run = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("宋体", 42.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Red
-        Me.Label1.Location = New System.Drawing.Point(362, 286)
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(37, 30)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(80, 56)
         Me.Label1.TabIndex = 0
@@ -47,8 +47,8 @@ Partial Class Form1
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("宋体", 42.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Red
-        Me.Label2.Location = New System.Drawing.Point(534, 286)
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(209, 30)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(80, 56)
         Me.Label2.TabIndex = 1
@@ -58,54 +58,82 @@ Partial Class Form1
         '
         Me.Label_NO.AutoSize = True
         Me.Label_NO.Font = New System.Drawing.Font("宋体", 42.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label_NO.ForeColor = System.Drawing.Color.Red
-        Me.Label_NO.Location = New System.Drawing.Point(448, 286)
+        Me.Label_NO.ForeColor = System.Drawing.Color.White
+        Me.Label_NO.Location = New System.Drawing.Point(123, 30)
         Me.Label_NO.Name = "Label_NO"
-        Me.Label_NO.Size = New System.Drawing.Size(52, 56)
+        Me.Label_NO.Size = New System.Drawing.Size(80, 56)
         Me.Label_NO.TabIndex = 2
-        Me.Label_NO.Text = "0"
+        Me.Label_NO.Text = "00"
         '
         'Button_run
         '
-        Me.Button_run.Font = New System.Drawing.Font("宋体", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button_run.Location = New System.Drawing.Point(405, 368)
+        Me.Button_run.Font = New System.Drawing.Font("微软雅黑", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Button_run.ForeColor = System.Drawing.Color.Red
+        Me.Button_run.Location = New System.Drawing.Point(86, 112)
         Me.Button_run.Name = "Button_run"
-        Me.Button_run.Size = New System.Drawing.Size(155, 50)
+        Me.Button_run.Size = New System.Drawing.Size(155, 60)
         Me.Button_run.TabIndex = 3
         Me.Button_run.Text = "开始"
         Me.Button_run.UseVisualStyleBackColor = True
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(905, 505)
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.Location = New System.Drawing.Point(921, 592)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 4
-        Me.Button1.Text = "重新开始"
+        Me.Button1.Text = "重新出题"
         Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Transparent
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.Button_run)
+        Me.Panel1.Controls.Add(Me.Label_NO)
+        Me.Panel1.Location = New System.Drawing.Point(341, 226)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(327, 212)
+        Me.Panel1.TabIndex = 5
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(703, 641)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(293, 12)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "版本Ver 0.1  版权所有:太原市波长智惠科贸有限公司"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.随机出题.My.Resources.Resources.bj
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1008, 662)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Button_run)
-        Me.Controls.Add(Me.Label_NO)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
         Me.Name = "Form1"
-        Me.Text = "随机出题"
-        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "万柏林区专武干部竞争性选拔面试考场"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents BindingSource1 As BindingSource
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents Label_NO As Label
     Friend WithEvents Button_run As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label3 As Label
 End Class
