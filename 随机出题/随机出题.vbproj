@@ -121,6 +121,9 @@
     <None Include="Resources\bj.bmp" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bj.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="settings.ico" />
     <Content Include="说明.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

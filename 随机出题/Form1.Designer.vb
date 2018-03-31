@@ -26,9 +26,12 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label_NO = New System.Windows.Forms.Label()
         Me.Button_run = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button_rest = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Button_set = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label_maxno = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -76,15 +79,15 @@ Partial Class Form1
         Me.Button_run.Text = "开始"
         Me.Button_run.UseVisualStyleBackColor = True
         '
-        'Button1
+        'Button_rest
         '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.Location = New System.Drawing.Point(921, 592)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "重新出题"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button_rest.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button_rest.Location = New System.Drawing.Point(724, 593)
+        Me.Button_rest.Name = "Button_rest"
+        Me.Button_rest.Size = New System.Drawing.Size(75, 23)
+        Me.Button_rest.TabIndex = 4
+        Me.Button_rest.Text = "重新出题"
+        Me.Button_rest.UseVisualStyleBackColor = True
         '
         'Panel1
         '
@@ -108,18 +111,50 @@ Partial Class Form1
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(293, 12)
         Me.Label3.TabIndex = 6
-        Me.Label3.Text = "版本Ver 0.1  版权所有:太原市波长智惠科贸有限公司"
+        Me.Label3.Text = "版本Ver 0.2  版权所有:太原市博长智惠科贸有限公司"
+        '
+        'Button_set
+        '
+        Me.Button_set.Location = New System.Drawing.Point(805, 593)
+        Me.Button_set.Name = "Button_set"
+        Me.Button_set.Size = New System.Drawing.Size(75, 23)
+        Me.Button_set.TabIndex = 7
+        Me.Button_set.Text = "设置"
+        Me.Button_set.UseVisualStyleBackColor = True
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(886, 598)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(71, 12)
+        Me.Label4.TabIndex = 8
+        Me.Label4.Text = "最大题目数:"
+        '
+        'Label_maxno
+        '
+        Me.Label_maxno.AutoSize = True
+        Me.Label_maxno.ForeColor = System.Drawing.Color.White
+        Me.Label_maxno.Location = New System.Drawing.Point(963, 598)
+        Me.Label_maxno.Name = "Label_maxno"
+        Me.Label_maxno.Size = New System.Drawing.Size(11, 12)
+        Me.Label_maxno.TabIndex = 9
+        Me.Label_maxno.Text = "0"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.随机出题.My.Resources.Resources.bj
+        Me.BackColor = System.Drawing.Color.Red
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1008, 662)
+        Me.Controls.Add(Me.Label_maxno)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Button_set)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Button_rest)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "万柏林区专武干部竞争性选拔面试考场"
@@ -132,8 +167,11 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents Label_NO As Label
     Friend WithEvents Button_run As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Button_rest As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label3 As Label
+    Friend WithEvents Button_set As Button
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label_maxno As Label
 End Class

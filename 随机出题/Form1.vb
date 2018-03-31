@@ -1,14 +1,19 @@
 ﻿Public Class Form1
     Dim no
     Dim biaohao = -1
+    Dim maxno
     Private Sub Button_run_Click(sender As Object, e As EventArgs) Handles Button_run.Click
-
-        If biaohao = 35 Or biaohao = -1 Then
+        Try
+            If biaohao = maxno Or biaohao = -1 Then
+                MsgBox("无题，或题已出完，请出题！")
+            Else
+                Label_NO.Text = no(biaohao)
+                biaohao = biaohao + 1
+            End If
+        Catch ex As Exception
             MsgBox("无题，或题已出完，请出题！")
-        Else
-            Label_NO.Text = no(biaohao)
-            biaohao = biaohao + 1
-        End If
+        End Try
+
 
     End Sub
     Public Function MakeRndSum(ByVal iMin As Integer, ByVal iMax As Integer, ByVal iSum As Integer) As Integer()
@@ -51,14 +56,23 @@ Line1:
     End Function
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        no = MakeRndSum(1, 35, 35)
-        biaohao = biaohao + 1
+        If Now() > CDate("2018.3.1") Then
+            Me.Close()
+        End If
+
+
+        Me.BackgroundImage = Image.FromFile("bj.bmp")
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_rest(sender As Object, e As EventArgs) Handles Button_rest.Click
         If MsgBox("出题将覆盖记录，确认重新出题？", vbQuestion + vbYesNo) = vbYes Then
-            no = MakeRndSum(1, 35, 35)
-            biaohao = 0
+            Try
+                no = MakeRndSum(1, maxno, maxno)
+                biaohao = 0
+            Catch ex As Exception
+                MsgBox("题数错误！")
+            End Try
+
         Else
 
         End If
@@ -68,5 +82,10 @@ Line1:
     Private Sub Form1_SizeChanged(sender As Object, e As EventArgs) Handles Me.SizeChanged
         Panel1.Left = (Me.Width - Panel1.Width) \ 2
         Panel1.Top = (Me.Height - Panel1.Height) \ 2
+    End Sub
+
+    Private Sub Button_set_Click(sender As Object, e As EventArgs) Handles Button_set.Click
+        maxno = InputBox("请输入最大题目数:")
+        Label_maxno.Text = maxno
     End Sub
 End Class
